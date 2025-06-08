@@ -1,12 +1,14 @@
 import { useState } from "react";
 
-export const Player = ({ name, symbol, isActive }) => {
+export const Player = ({ name, symbol, isActive, onChangeName }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [playerName, setPlayerName] = useState(name);
-  const [playerSymbol, setPlayerSymbol] = useState(symbol);
 
   function handleEditClick() {
     setIsEditing((prev) => !prev);
+    if (isEditing) {
+      onChangeName(symbol, playerName);
+    }
   }
 
   let editableName = <span className="player-name">{playerName}</span>;
