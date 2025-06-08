@@ -1,3 +1,8 @@
+export const SYMBOLS = {
+  X: "X",
+  O: "O",
+};
+
 export const PLAYERS = {
   X: "Player 1",
   O: "Player 2",
